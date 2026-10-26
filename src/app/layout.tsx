@@ -3,8 +3,10 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { buildOrganizationSchema, buildWebSiteSchema, renderJSONLD, buildFAQSchema } from "@/lib/seo-schema";
 import "./globals.css";
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 export const metadata: Metadata = {
+  verification: { google: "Y5pzuuZFr2zbza9G3Ww5ffS5g9cKKw4fx0P2U4QEN9s" },
   title: "AEGIS Industrial Safety | Rack Protector, Warehouse Barrier & Safety Bollard Manufacturer",
   description:
     "OSHA-compliant steel rack protectors, HDPE safety bollards, and modular warehouse barriers. Trusted by Amazon FBA and global 3PL operators. ISO 9001 certified manufacturer — bolt-on install, 15,000 lbs impact rated.",
@@ -29,13 +31,13 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   alternates: {
-    canonical: "https://www.aegis-industrial.com",
+    canonical: "https://100guards.com",
   },
 };
 
 const orgSchema = buildOrganizationSchema({
   name: "AEGIS Industrial Safety",
-  url: "https://www.aegis-industrial.com",
+  url: "https://100guards.com",
   description:
     "Manufacturer of OSHA-compliant steel rack protectors, HDPE safety bollards, and modular warehouse barrier systems for overseas fulfillment centers and logistics hubs worldwide.",
   telephone: "+86-571-8888-0000",
@@ -50,9 +52,9 @@ const orgSchema = buildOrganizationSchema({
 });
 
 const websiteSchema = buildWebSiteSchema(
-  "https://www.aegis-industrial.com",
+  "https://100guards.com",
   "AEGIS Industrial Safety",
-  "https://www.aegis-industrial.com/search?q={search_term_string}"
+  "https://100guards.com/search?q={search_term_string}"
 );
 
 const generalFAQSchema = buildFAQSchema([
@@ -99,6 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-[#0A0A0A] text-[#EAEAEA] antialiased">
+        <GoogleAnalytics />
         <Navbar />
         {children}
         <Footer />
